@@ -5,10 +5,10 @@ orbs:
    serverless: circleci/serverless-framework@1.0
 jobs:
   zero:
-  executor: node
-  steps:
-    - run: npm i serverless-bundle@4.1.0
-    - run: npm i serverless-pseudo-parameters@2.5.0
+    executor: node
+    steps:
+      - run: npm i serverless-bundle@4.1.0
+      - run: npm i serverless-pseudo-parameters@2.5.0
   one:
     executor: serverless/default
     steps:
