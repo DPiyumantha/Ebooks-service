@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import AWS from 'aws-sdk';
 import commonMiddleware from '../lib/commonMiddleware';
-
+import createError from "http-errors";
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 async function saveEbook(event, context) {
@@ -9,7 +9,6 @@ async function saveEbook(event, context) {
   
   const { email } = event.requestContext.authorizer;
 //   const {file} = event.body;
-//   const { email } = event.requestContext.authorizer;
   const now = new Date();
 
   const ebook = {
